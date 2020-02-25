@@ -81,3 +81,34 @@ None
 #### Accuracy 
 ![alt text](https://github.com/HSabbar/Detection-Symptomes-/blob/master/images/Accuracy-de-sympto%CC%82mes-.png)
 
+### Tester avec des nouvelles transmissions
+
+```
+new_complaint = ["maintenir isolement doute grippe", 
+                 "appel fille nouvelles récidive pneumopathie ème récidive mois dès arrêt \
+                 antibiotiques infection redémarre fille aimerai faire point médecin traitant suite",
+                "multiples fausses routes dernières semaines pneumopathies inhalation traitement atbrevoir \
+                mt alimentation plaisir texture lisse type yaourt desserts", 
+                "hospitalisée médecine thann bronchopneumopathie", 
+                "faire test grippale mercredi journée conservation", 
+                "nouvelles prises géria mr pneumopathie atbiothérapie débutée jour toujours porteur sad retour \
+                domicile prévu"]
+for tag_complaint in new_complaint :
+    tag_complaint = [preprocess_clean(tag_complaint)]
+    seq = tokenizer.texts_to_sequences(tag_complaint)
+    padded = pad_sequences(seq, maxlen=MAX_SEQUENCE_LENGTH)
+    pred = model.predict(padded)
+
+    labels = ['GRIPPE_IRA', 'rien']
+    print(tag_complaint[0], '\npred : ', labels[np.argmax(pred)])
+    
+[out :]
+
+pred :  GRIPPE_IRA
+pred :  GRIPPE_IRA
+pred :  GRIPPE_IRA
+pred :  GRIPPE_IRA
+pred :  GRIPPE_IRA
+pred :  GRIPPE_IRA
+
+```
