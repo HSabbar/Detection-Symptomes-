@@ -84,28 +84,31 @@ None
 ### Tester avec des nouvelles transmissions
 
 ```
-new_complaint = ["maintenir isolement doute grippe", 
-                 "appel fille nouvelles récidive pneumopathie ème récidive mois dès arrêt \
-                 antibiotiques infection redémarre fille aimerai faire point médecin traitant suite",
-                "multiples fausses routes dernières semaines pneumopathies inhalation traitement atbrevoir \
-                mt alimentation plaisir texture lisse type yaourt desserts", 
-                "hospitalisée médecine thann bronchopneumopathie", 
-                "faire test grippale mercredi journée conservation", 
-                "nouvelles prises géria mr pneumopathie atbiothérapie débutée jour toujours porteur sad retour \
-                domicile prévu"]
-for tag_complaint in new_complaint :
-    tag_complaint = [preprocess_clean(tag_complaint)]
-    seq = tokenizer.texts_to_sequences(tag_complaint)
+new_transmissions = ["BILAN BIO DEMANDÉ INFECTIEUX , SERO GRIPPALEGAÏACS SUR SELLES , SUSPICION D'UN SYNDROME \
+                NÉOPLASIQUEKINÉ RESPIRATOIRE", 
+                 "SUITE CONSULTATION : D'APÈS SON ACCOMPAGNATEUR : PAS DE PB PNEUMO, PAS DE VISITE \
+                 À REPROGRAMMER. DEMANDE DE ME DENIS POUR ARRET DU DIURÉTIQUE, PNEUMOLOGUE PAS CONTRE \
+                 À PRIORI MAIS ABSENCE DE COMPTE RENDU. DEMANDE DE CONSULTATION FAITE AVEC LE DR FROMONT,\
+                 VIENDRA DEMAIN OU VENDREDI.",
+                "ETAT GÉNÉRAL OKTOUSSE PEU, NON ENCOMBRÉTRAITEMENT TAMIFLU + ANTIBIOTIQUES DONNÉS HIER \
+                ET AUJOURDH'UIAIMERAIT QU'ON LUI APPORTE LE JOURNAL LE MATIN CAR ÉTANT ISOLÉ IL NE PEUT \
+                PAST°= 36.8°C À 10HINJECTION DE ZARZIO FAIT LE 11/02", 
+                "GRIPPE A CONFIRMÉE, RESPIRATION SIFFLANTE REMARQUÉE AUJOURD'HUI PLUS QUE LES AUTRES JOURS", 
+                "A DES APPAREILS AUDITIFS DES 2 COTÉS ET DES LUNETTESA SAVOIR : A ÉTÉ HOSPITALISÉE EN DÉCEMBRE\
+                EN SERVICE DE RÉANIMATION POUR UNE PNEUMOPATHIE"]
+for transmissions in new_transmissions :
+    transmissions = [preprocess_clean(transmissions)]
+    seq = tokenizer.texts_to_sequences(transmissions)
     padded = pad_sequences(seq, maxlen=MAX_SEQUENCE_LENGTH)
     pred = model.predict(padded)
 
     labels = ['GRIPPE_IRA', 'rien']
     print('pred : ', labels[np.argmax(pred)])
+
     
 [out :]
 
-pred :  GRIPPE_IRA
-pred :  GRIPPE_IRA
+pred :  rien
 pred :  GRIPPE_IRA
 pred :  GRIPPE_IRA
 pred :  GRIPPE_IRA
