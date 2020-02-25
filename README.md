@@ -28,7 +28,7 @@ new_str = trés aggressive lors des soins grande difficulté a la changé frappe
 ```
 ### Normaliser les données :
 Normaliser le texte signifie le convertir en un format standard plus pratique avant de le transformer en fonctionnalités pour des algorithmes d’apprentissage. cette étape est considéré comme la conversion d'un langage humain en une forme lisible par la machine.
-Un tokenizer sépare le texte en une liste de séquence de mot, qui correspondent à des mots, puis on transforme grâce la fonctionne [`pad_sequences(X, maxlen=MAX_SEQUENCE_LENGTH)`](https://keras.io/preprocessing/sequence/) les listes des mots en tableaux de formes Numpy avec les mêmes longueurs
+Un [tokenizer](https://keras.io/preprocessing/text/) sépare le texte en une liste de séquence de mot, qui correspondent à des mots, puis on transforme grâce la fonctionne [`pad_sequences(X, maxlen=MAX_SEQUENCE_LENGTH)`](https://keras.io/preprocessing/sequence/) les listes des mots en tableaux de formes Numpy avec les mêmes longueurs
 
 ### Train test split : 
 
