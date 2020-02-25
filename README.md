@@ -72,5 +72,12 @@ None
 * La fonction d'activation est `softmax` pour la classification multi-classes.
 * Parce qu'il s'agit d'un problème de classification multi-classes, `categorical_crossentropy` est utilisé comme fonction de loss.
 
+## Résultat
+
+### Résultat d'apprentissage : 
+
+#### Loss 
+
+#### Accuracy 
 
 
