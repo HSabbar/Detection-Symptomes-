@@ -47,6 +47,22 @@ model.add(LSTM(60, dropout=0.2, recurrent_dropout=0.2))
 model.add(Dense(2, activation='softmax'))
 model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding_2 (Embedding)      (None, 512, 200)          10000000  
+_________________________________________________________________
+spatial_dropout1d_2 (Spatial (None, 512, 200)          0         
+_________________________________________________________________
+lstm_2 (LSTM)                (None, 60)                62640     
+_________________________________________________________________
+dense_2 (Dense)              (None, 2)                 122       
+=================================================================
+Total params: 10,062,762
+Trainable params: 10,062,762
+Non-trainable params: 0
+_________________________________________________________________
+None
 ```
 
 * La première couche est le [`Embedding`](https://keras.io/layers/embeddings/) initialise d'abord le vecteur de embedding au hasard, puis utilise l'optimiseur de réseau pour le mettre à jour de la même manière que pour toute autre couche réseau en **keras**. cette couche utilise `MAX_NB_WORDS = 100` vecteurs de longueur pour représenter chaque mot, Le `MAX_NB_WORDS = 50000` représente la taille de notre vocabulaire, [`input_length=X_train.shape[1]`](https://keras.io/layers/core/) détermine la taille de chaque séquence d'entrée.
