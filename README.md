@@ -115,3 +115,7 @@ pred :  GRIPPE_IRA
 pred :  GRIPPE_IRA
 
 ```
+
+## Conclusion
+
+Vu les résultat de teste sur les nouvelles transmissions il détecte avec une note 4/5,  
