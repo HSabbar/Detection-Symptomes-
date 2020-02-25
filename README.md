@@ -100,7 +100,7 @@ for tag_complaint in new_complaint :
     pred = model.predict(padded)
 
     labels = ['GRIPPE_IRA', 'rien']
-    print(tag_complaint[0], '\npred : ', labels[np.argmax(pred)])
+    print('pred : ', labels[np.argmax(pred)])
     
 [out :]
 
