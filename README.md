@@ -77,7 +77,7 @@ None
 ### Résultat d'apprentissage : 
 
 #### Loss 
-
+![alt text](https://github.com/HSabbar/Detection-Symptomes-/blob/master/images/Loss-de-sympto%CC%82mes-.png)
 #### Accuracy 
-
+![alt text](https://github.com/HSabbar/Detection-Symptomes-/blob/master/images/Accuracy-de-sympto%CC%82mes-.png)
 
