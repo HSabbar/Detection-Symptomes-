@@ -20,11 +20,13 @@ Pour réaliser ce travail nous avons utilisé les regex (les expressions réguli
 * Suppression des balises html restantes dans les transmissions.
 * Suppression des espaces en trop.
 *la suppression des stopwords, Ce sont les mots très courants dans la langue étudiée ("et", "à", "le"...) qui n'apportent pas de valeur informative pour la compréhension du sens d'un document et corpus. Il sont très fréquents et ralentissent notre travail.
+* Transformer les chiffres numérique en alphabet
+* Suppression des lines qui n'a importe pas d'informations (erreur ou suite)
 
 #### Exemple de clean texte : 
 ```
-str = "trés aggressive lors des soins<span style=""text-decoration: underline; background-color: green;"">grande difficulté a la changé frappe++ crie"
-new_str = trés aggressive lors des soins grande difficulté a la changé frappe crie 
+str = "23/02/2018 à 14:30 trés aggressive lors des soins<span style=""text-decoration: underline; background-color: green;"">grande difficulté a la changé frappe++ crie 1992é2323"
+new_str = vingt-trois deux deux mille dix-huit quatorze trente trés aggressive lors soins grande difficulté changé frappe plus plus crie mille neuf cent quatre-vingt-douze deux mille trois cent vingt-trois
 ```
 ### Normaliser les données :
 Normaliser le texte signifie le convertir en un format standard plus pratique avant de le transformer en fonctionnalités pour des algorithmes d’apprentissage. cette étape est considéré comme la conversion d'un langage humain en une forme lisible par la machine.
